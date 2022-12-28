@@ -37,7 +37,7 @@ def coef(n: int, k: int) -> float:
 	return _m(n) / (_m(k) * _m(n - k))
 
 
-class Binomiale:
+class Binomial:
 	"""
 	Represents a Binomial distribution of parameter n and p
 	"""
@@ -113,7 +113,7 @@ class Binomiale:
 		return p
 
 
-def show_graph(b: Binomiale):
+def show_graph(b: Binomial):
 	# plt.axis((0, b.n, 0, None))
 	for x in range(0, b.n):
 		plt.bar(x, b == x, width=0.4, color="orange")
@@ -122,7 +122,7 @@ def show_graph(b: Binomiale):
 
 
 if __name__ == "__main__":
-	X = Binomiale(20, 0.45)
+	X = Binomial(20, 0.45)
 	# X = Binomiale(50, 0.17)
 
 	print(f"X -> {X}")
