@@ -2,6 +2,12 @@
 
 Some algorithms I made to understand maths better.
 
+| Name                          | Status | Tests? |
+|-------------------------------|--------|--------|
+| [Binomial Law](#binomial-law) | Done   | ✅      |
+| [Matrix](#matrix)             | WIP    | ✅      |
+| Vectors                       | TODO   | ❌      |
+
 ## Binomial law
 
 ```python
@@ -33,3 +39,43 @@ show_graph(X)
 
 ![PyCharm](images/binomial_law.png)
 
+# Matrix
+
+```python
+from matrix import Matrix
+
+A = Matrix([
+	[1, 2, 3],
+	[0, 4, -1],
+])
+
+assert A.size == (2, 3)
+assert A.is_square == False
+assert A.is_line == False
+assert A.is_column == False
+
+B = Matrix([
+	[1, 0, 0],
+	[0, 2, 0],
+	[0, 0, 0],
+])
+
+assert B.size == (3, 3)
+assert B.is_square == True
+assert B.is_line == False
+assert B.is_column == False
+
+assert A * B == Matrix([
+	[1, 4, 0],
+	[0, 8, 0]
+])
+
+assert -A == Matrix([
+	[-1, -2, -3],
+	[0, -4, 1],
+])
+
+I2 = Matrix.identity(2)
+
+O2 = Matrix.null(2)
+```
