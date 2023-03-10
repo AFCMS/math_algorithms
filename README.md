@@ -6,6 +6,7 @@ Some algorithms I made to understand maths better.
 |-------------------------------|--------|--------|
 | [Binomial Law](#binomial-law) | Done   | ✅      |
 | [Matrix](#matrix)             | WIP    | ✅      |
+| Sequences                     | WIP    | ❌      |
 | Vectors                       | TODO   | ❌      |
 
 ## Binomial law
