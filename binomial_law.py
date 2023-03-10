@@ -47,12 +47,19 @@ class Binomial:
 		self.p = p
 
 	def __str__(self):
+		"""
+		>>> str(Binomial(10, 20))
+		'B(10, 20)'
+		"""
 		return f"B({self.n}, {self.p})"
 
 	@functools.cached_property
 	def expected(self) -> float:
 		"""
 		E(x) = np
+
+		>>> Binomial(10, 20).expected
+		200
 		"""
 		return self.n * self.p
 
@@ -73,12 +80,18 @@ class Binomial:
 	def __eq__(self, k: int) -> float:
 		"""
 		P(X=k)
+
+		>>> Binomial(20, 0.45) == 8
+		0.16230037134255265
 		"""
 		return coef(self.n, k) * (self.p ** k) * ((1 - self.p) ** (self.n - k))
 
 	def __gt__(self, k: int) -> float:
 		"""
 		P(X>k)
+
+		>>> Binomial(20, 0.45) > 8
+		0.585693765883885
 		"""
 		p = 0
 		for i in range(self.n, k, -1):
@@ -88,6 +101,9 @@ class Binomial:
 	def __ge__(self, k: int) -> float:
 		"""
 		P(X>=k)
+
+		>>> Binomial(20, 0.45) >= 8
+		0.7479941372264376
 		"""
 		p = 0
 		for i in range(self.n, k - 1, -1):
@@ -97,6 +113,9 @@ class Binomial:
 	def __lt__(self, k: int) -> float:
 		"""
 		P(X<k)
+
+		>>> Binomial(20, 0.45) < 8
+		0.25200586277356357
 		"""
 		p = 0
 		for i in range(0, k):
@@ -106,6 +125,9 @@ class Binomial:
 	def __le__(self, k: int) -> float:
 		"""
 		P(X<=k)
+
+		>>> Binomial(20, 0.45) <= 8
+		0.4143062341161162
 		"""
 		p = 0
 		for i in range(0, k + 1):
