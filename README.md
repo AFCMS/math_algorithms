@@ -38,7 +38,7 @@ X = Binomial(10, 0.2)
 show_graph(X)
 ```
 
-![PyCharm](images/binomial_law.png)
+![PyCharm Binomial Law](images/binomial_law.png)
 
 # Matrix
 
